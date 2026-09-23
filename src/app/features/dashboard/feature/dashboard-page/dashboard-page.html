@@ -1,0 +1,16 @@
+@if (user(); as user) {
+  <main class="dashboard">
+    <header class="dashboard__header">
+      <div class="dashboard__profile">
+        @if (user.avatarUrl) {
+          <img [src]="user.avatarUrl" alt="" class="dashboard__avatar" />
+        }
+        <div>
+          <h1 class="dashboard__title">Bonjour, {{ user.fullName }}</h1>
+          <p class="dashboard__role">{{ user.role }}</p>
+        </div>
+      </div>
+      <button type="button" class="btn btn--ghost" (click)="logout()">Se déconnecter</button>
+    </header>
+  </main>
+}
